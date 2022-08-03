@@ -186,7 +186,7 @@ header {
   background: #422890;
   padding: 2rem;
   border: transparent 1px solid;
-  border-radius: 1rem;
+  border-radius: 3rem;
   overflow: hidden;
 }
 #team .container .team__container .team__member:hover {
@@ -201,6 +201,7 @@ header {
   width: initial;
 }
 #team .container .team__container .team__member .team__member--img img {
+  border-radius: 50%;
   width: initial;
   object-fit: cover;
   filter: saturate(0);

@@ -206,7 +206,7 @@ header{
                 background: $bg2;
                 padding: 2rem;
                 border:transparent 1px solid;
-                border-radius: 1rem;
+                border-radius: 3rem;
                 overflow: hidden;
                
                 &:hover{
@@ -224,6 +224,7 @@ header{
                 .team__member--img {
                     width: initial;
                     img{
+                        border-radius: 50%;
                         width: initial;
                         object-fit: cover;
                         filter: saturate(0);
