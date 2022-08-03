@@ -1,8 +1,13 @@
 $green: #54b192;
-$green-l: #a4cec0;
 $gray: #3f3d56;
 $smooth: all 0.3s ease-in;
 $purple: #9F7DEA;
+$bg: #2E343B;
+$bg2: #422890;
+$smooth-2: all 400ms ease;
+$purple-2:#6c63ff;
+// ==============
+
 *,
 *:before,
 *:after {
@@ -17,7 +22,7 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #2E343B;
+  background-color: $bg;
 }
 
 img {
@@ -43,16 +48,15 @@ button {
   border-radius: 100px;
   cursor: pointer;
   transition: $smooth;
-  &:hover{
-    background-color: $green;
-    transition: $smooth;
-  }
 }
 // ==================================================
 
 header{
     position: absolute;
+    position: fixed;
+    background-color: #242526 ;
     width: 100%;
+    height: 10vh;
     z-index: 1;
 }
 .navbar{
@@ -60,7 +64,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0px 0;
-    border-bottom: #ccc 1px solid;
+    // border-bottom: #ccc 1px solid;
     .navbar__logo img{
         width: 57px;
         height: 57px;
@@ -77,21 +81,19 @@ header{
             font-weight: 300;
             transition: $smooth;
             &:hover{
-                color: $purple;
+                color: $purple-2;
                 transition: $smooth;
             }
         }
 
         .navbar__list--item{
-            margin: 55px;
+            margin: 30px 55px;
         }
         .navbar__list--btn {
-            background-color: $gray;
             font-size: 1rem;
             margin-left: 45px;
             &:hover{
-                color: $purple;
-                // background-color: $purple;
+                color: $purple-2;
                 transition: $smooth;
             }
           }
@@ -117,12 +119,12 @@ header{
     }
     .banner__heading{
         text-align: initial;
-        color: #9F7DEA;
         z-index: 1;
         padding-top: 10%;
         height: 580px;
         width: 50%;
         h1{
+            color: $purple-2;
             font-size: 4rem;
             margin-bottom: 1rem;
         }
@@ -144,7 +146,8 @@ header{
                 background-color: $green;
                 &:hover{
                     background-color: $gray;
-                    color: $purple;
+                    color: $purple-2;
+                    transition: $smooth;
                 }
             }
             img{
@@ -166,6 +169,7 @@ header{
 
 // ==========================================================
 #play{
+    // margin: 2rem 0;
     width: 100%;
     height: 100vh;
     background-color: $green;
@@ -180,30 +184,107 @@ header{
 // ==========================================================
 #team{
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     padding: 2rem;
     .container{
-        border-top: 1px #ccc solid;
         h2{
-            margin-top: 2rem;
             text-align: center;
-            color: $purple;
-            font-size: 3rem;
             margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: $purple-2;
         }
         .team__container{
-            height: 60%;
             display: flex;
             justify-content: space-evenly;
-            gap: 5rem;
-            background-color: #54b192;
-            padding: 2rem;
+            gap: 10%;
+            &:first-child{
+                margin-bottom: 10rem;
+            }
             .team__member{
-                padding: 5rem;
-                background-color: #9F7DEA;
-                img{
-                    width: 50px;
+                width: 40%;
+                position: relative;
+                background: $bg2;
+                padding: 2rem;
+                border:transparent 1px solid;
+                border-radius: 1rem;
+                overflow: hidden;
+               
+                &:hover{
+                    background: transparent;
+                    border-color: $purple-2; 
+                    transition: $smooth-2;
+                    &:hover{
+                        .team__member--img img{
+                            filter: saturate(1);
+                        }
+
+                    }
+                    
                 }
+                .team__member--img {
+                    width: initial;
+                    img{
+                        width: initial;
+                        object-fit: cover;
+                        filter: saturate(0);
+                    }
+                }
+
+                .team__member--info *{
+                    text-align: center;
+                    margin-top: 1.4rem;
+                    color: #fff;
+                }
+                .team__member--social{
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #fff;
+                    border-radius: 1rem 0 0 1rem;
+                    border: -2rem 0 2rem rgba(0,0,0,0.3);
+                    transform: translateY(-50%);
+                    right: -100%;
+                    a{
+                        font-size: 2rem;
+                        &:nth-child(2){
+                            border-top:1px solid #ccc ;
+                            border-bottom:1px solid #ccc ;
+                        }
+                        padding: 1rem;
+                        // color: #fff;
+                        .fa-facebook{
+                            color: #3b5999;
+                    
+                        }
+                        .fa-instagram{
+                            color: #e4405f;
+                        }
+                        .fa-twitter{
+                            color: #55acee;
+                        }
+                        .social-share-icon {
+                            width: 40px;
+                            height: 40px;
+                            // background-color: white;
+                            border-radius: inherit;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 2rem;
+                        }
+                        
+                    }
+                    
+                }
+                &:hover{
+                    .team__member--social{
+                        right: 0;
+                        transition: $smooth-2;
+                    }
+                }
+                
             }
         }
     }

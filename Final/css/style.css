@@ -41,14 +41,13 @@ button {
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
-button:hover {
-  background-color: #54b192;
-  transition: all 0.3s ease-in;
-}
 
 header {
   position: absolute;
+  position: fixed;
+  background-color: #242526;
   width: 100%;
+  height: 10vh;
   z-index: 1;
 }
 
@@ -57,7 +56,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0px 0;
-  border-bottom: #ccc 1px solid;
 }
 .navbar .navbar__logo img {
   width: 57px;
@@ -75,19 +73,18 @@ header {
   transition: all 0.3s ease-in;
 }
 .navbar .navbar__list a:hover {
-  color: #9F7DEA;
+  color: #6c63ff;
   transition: all 0.3s ease-in;
 }
 .navbar .navbar__list .navbar__list--item {
-  margin: 55px;
+  margin: 30px 55px;
 }
 .navbar .navbar__list .navbar__list--btn {
-  background-color: #3f3d56;
   font-size: 1rem;
   margin-left: 45px;
 }
 .navbar .navbar__list .navbar__list--btn:hover {
-  color: #9F7DEA;
+  color: #6c63ff;
   transition: all 0.3s ease-in;
 }
 
@@ -107,13 +104,13 @@ header {
 }
 #banner .banner__heading {
   text-align: initial;
-  color: #9F7DEA;
   z-index: 1;
   padding-top: 10%;
   height: 580px;
   width: 50%;
 }
 #banner .banner__heading h1 {
+  color: #6c63ff;
   font-size: 4rem;
   margin-bottom: 1rem;
 }
@@ -137,7 +134,8 @@ header {
 }
 #banner .banner__heading .banner__heading--item .banner__btn:hover {
   background-color: #3f3d56;
-  color: #9F7DEA;
+  color: #6c63ff;
+  transition: all 0.3s ease-in;
 }
 #banner .banner__heading .banner__heading--item img {
   width: 155px;
@@ -165,33 +163,94 @@ header {
 
 #team {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   padding: 2rem;
-}
-#team .container {
-  border-top: 1px #ccc solid;
 }
 #team .container h2 {
-  margin-top: 2rem;
   text-align: center;
-  color: #9F7DEA;
-  font-size: 3rem;
   margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #6c63ff;
 }
 #team .container .team__container {
-  height: 60%;
   display: flex;
   justify-content: space-evenly;
-  gap: 5rem;
-  background-color: #54b192;
-  padding: 2rem;
+  gap: 10%;
+}
+#team .container .team__container:first-child {
+  margin-bottom: 10rem;
 }
 #team .container .team__container .team__member {
-  padding: 5rem;
-  background-color: #9F7DEA;
+  width: 40%;
+  position: relative;
+  background: #422890;
+  padding: 2rem;
+  border: transparent 1px solid;
+  border-radius: 1rem;
+  overflow: hidden;
 }
-#team .container .team__container .team__member img {
-  width: 50px;
+#team .container .team__container .team__member:hover {
+  background: transparent;
+  border-color: #6c63ff;
+  transition: all 400ms ease;
+}
+#team .container .team__container .team__member:hover:hover .team__member--img img {
+  filter: saturate(1);
+}
+#team .container .team__container .team__member .team__member--img {
+  width: initial;
+}
+#team .container .team__container .team__member .team__member--img img {
+  width: initial;
+  object-fit: cover;
+  filter: saturate(0);
+}
+#team .container .team__container .team__member .team__member--info * {
+  text-align: center;
+  margin-top: 1.4rem;
+  color: #fff;
+}
+#team .container .team__container .team__member .team__member--social {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 1rem 0 0 1rem;
+  border: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-50%);
+  right: -100%;
+}
+#team .container .team__container .team__member .team__member--social a {
+  font-size: 2rem;
+  padding: 1rem;
+}
+#team .container .team__container .team__member .team__member--social a:nth-child(2) {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+#team .container .team__container .team__member .team__member--social a .fa-facebook {
+  color: #3b5999;
+}
+#team .container .team__container .team__member .team__member--social a .fa-instagram {
+  color: #e4405f;
+}
+#team .container .team__container .team__member .team__member--social a .fa-twitter {
+  color: #55acee;
+}
+#team .container .team__container .team__member .team__member--social a .social-share-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+#team .container .team__container .team__member:hover .team__member--social {
+  right: 0;
+  transition: all 400ms ease;
 }
 
 /*# sourceMappingURL=style.css.map */
