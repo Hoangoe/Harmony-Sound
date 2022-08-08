@@ -1,21 +1,25 @@
 $green: #54b192;
 $gray: #3f3d56;
-$smooth: all 0.3s ease-in;
-$purple: #9F7DEA;
+$red:#f75842;
 $bg: #2E343B;
 $bg2: #422890;
 $bg3: #242526;
+$primary-color:#6c63ff;
 $smooth-2: all 400ms ease;
-$purple-2:#6c63ff;
+$smooth: all 0.3s ease-in;
 // ==============
-
+@at-root{
+  $primary-color:#6c63ff;
+}
 *,
 *:before,
+
 *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -24,6 +28,10 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   background-color: $bg;
+}
+.dark--theme{
+    $bg:#fff;
+    $primary-color:red;
 }
 
 img {
@@ -43,12 +51,13 @@ ul{
     list-style: none;
 }
 button {
+    
   text-align: center;
   color: #fff;
   background-color: $gray;
   padding: 0.8rem 2.5rem;
   border: none;
-  border-radius: 100px;
+  border-radius: 10rem;
   cursor: pointer;
   transition: $smooth;
 }
@@ -85,23 +94,62 @@ header{
             font-weight: 300;
             transition: $smooth;
             &:hover{
-                color: $purple-2;
+                color: $primary-color;
                 transition: $smooth;
             }
         }
-
         .navbar__list--item{
             margin: 30px 55px;
         }
-        .navbar__list--btn {
-            font-size: 1rem;
-            margin-left: 45px;
-            &:hover{
-                color: $purple-2;
-                transition: $smooth;
+    }
+    .navbar__mode{
+        text-align: center;
+        .switch{
+            position: relative;
+            cursor: pointer;
+            width: 7rem;
+            height: 3rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            background: #000;
+            border-radius: 10rem;
+            transition: background-color 0.25s linear;
+            .fa-moon {
+                color: #f1c40f;
+                font-size: 1.5rem;
             }
-          }
-
+              
+            .fa-sun {
+                color: #f39c12;
+                font-size: 1.5rem;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                background-color: #fff;
+                // top: 5px;
+                left: 0;
+                transition: background-color 0.25s linear, transform 0.25s linear;
+            }
+        }
+        .switch-input{
+            
+            display: none;
+            &:checked + .switch{
+                background-color: #6a5af9;
+                &::after{
+                    transform: translateX(4rem);
+                    background-color: white;
+                }
+            }
+        }
     }
 }
 
@@ -129,7 +177,7 @@ header{
         height: 580px;
         width: 50%;
         h1{
-            color: $purple-2;
+            color: $primary-color;
             font-size: 4rem;
             margin-bottom: 1rem;
         }
@@ -151,7 +199,7 @@ header{
                 background-color: $green;
                 &:hover{
                     background-color: $gray;
-                    color: $purple-2;
+                    color: $primary-color;
                     transition: $smooth;
                 }
             }
@@ -205,7 +253,7 @@ header{
             text-align: center;
             width: 15%;
             font-size: 2.5rem;
-            color: $purple-2;
+            color: $primary-color;
         }
         .team{
             margin-top: 3rem;
@@ -226,8 +274,8 @@ header{
                 border-radius: 3rem;
                 overflow: hidden;
                 &:hover{
-                    background: transparent;
-                    border-color: $purple-2; 
+                    // background: transparent;
+                    border-color: $primary-color; 
                     transition: $smooth-2;
                     &:hover{
                         .team__member--img img{
@@ -309,6 +357,130 @@ header{
     
 }
 
+// =================================================
+#contact{
+    .contact__container{
+        max-width: 1200px;
+        width: 100%;
+        background-color: $bg2;
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 4rem;
+        margin: 5rem auto;
+        border-radius: 1rem;
+        .contact__aside{
+            background-color: $primary-color;
+            padding: 3rem;
+            border-radius: 1rem;
+            position: relative;
+            bottom: 1rem;
+            .aside__img{
+                width: 12rem;
+                margin-bottom: 2rem;
+            }
+            h2{
+                font-weight: 500;
+                font-size: 2rem;
+                text-align: left;
+                margin-bottom: 1rem;
+                color: #fff;
+            }
+            p{
+                font-weight: 300;
+                font-size: 1rem;
+                margin-bottom: 2rem;
+                color: #fff;
+            }
+            .contact__detail{
+                li{
+                    font-size: 1rem;
+                    font-weight: 300;
+                    color: #fff;
+                    display: flex;
+                    gap: 2rem;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                }
+            }
+            .contact__social{
+                display: flex;
+                gap: 1rem;
+                margin-top: 3rem;
+                a{
+                    background-color: #fff;
+                    padding: 0.5rem;
+                    font-size: 1.5rem;
+                    border-radius: 50%;
+                    transition: $smooth-2;
+                    .fa-facebook{
+                        color: #3b5999;
+                
+                    }
+                    .fa-instagram{
+                        color: #e4405f;
+                    }
+                    .fa-twitter{
+                        color: #55acee;
+                    }
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        .contact__form{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-right: 1rem;
+            position: relative;
+            textarea, input{
+                padding: 1.5rem;
+                display: block;
+                width: 100%;
+                font-size: 1.5rem;
+                border: 1px solid $primary-color;
+                border-radius: 4px;
+                background-color: transparent;
+                color: #fff;
+                resize: none;
+            }
+            label{
+                display: inline-block;
+                font-weight: 600;
+                cursor: pointer;
+                position: absolute;
+                left: 1rem;
+                background-color: $bg2;
+                font-size: 1rem;
+                transform: translateY(-50%);
+                color: $primary-color;
+            }
+            .submit__btn{
+                width: max-content;
+                cursor: pointer;
+                padding: 1rem 2rem;
+                margin-top: 1rem;
+                border-radius: 4px;
+                background-color: #f75842;
+                border: 1px solid transparent;
+                font-weight: 500;
+                transition: $smooth-2;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                transition: all 0.2s linear;
+                &:hover{
+                    background-color: #f75842;
+                    transform: rotateY(-15deg);
+                }
+            }
+        }
+    }
+}
+
+
 // =================================
 footer{
     background-color: $bg3;
@@ -360,9 +532,5 @@ footer{
                 color: #55acee;
             }
         }
-
     }
-    
 }
-
-

@@ -5,39 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Final</title>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="navbar__container">
             <nav class="navbar">
                 <div class="navbar__logo">
-                    <img src="./img/logo.svg" alt="" class="src">
+                    <img src="./img/navbar_img/logo.svg" alt="" class="src">
                 </div>
                 <ul class="navbar__list">
                     <li class="navbar__list--item"><a href="#">Home</a></li>
                     <li class="navbar__list--item"><a href="#play">Play</a></li>
                     <li class="navbar__list--item"><a href="#team">Our Team</a></li>
                     <li class="navbar__list--item"><a href="#contact">Contact</a></li>
+                    <div class="navbar__mode">
+                        <input type="checkbox" id="mode" class="switch-input" />
+                        <label for="mode" class="switch">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </label>
+                    </div>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!--======================================= -->
+    <!--=====================banner================== -->
 
     <main>
         <section id="banner">
-            <div class="container">
+            <div class="banner__container">
                 <div class="banner__img">
-                    <img src="./img/banner-img.png" alt="">
+                    <img src="./img/banner_img/banner-img.png" alt="">
                 </div>
                 <div class="banner__heading">
                     <h1>A SOFT MURMUR </h1>
@@ -45,28 +53,62 @@
                         consequatur provident, culpa quaerat fugit dolorem illum
                         repellendus quas quasi obcaecati quia aliquid odit! Vitae, non?</p>
                     <div class="banner__heading--item">
-                        <img src="./img/baloon-logo.png" alt="">
+                        <img src="./img/banner_img/baloon-logo.png" alt="">
                         <a href="#play"><button class="banner__btn">Start</button></a>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!--================================  -->
+        <!--================play================  -->
 
         <section id="play">
-            <div class="container">chỗ này là các loại nhạc</div>
+            <div class="play__container">
+                <div class="play__heading">
+                    <h2>harmony sound</h2>
+                    <p>Ambient sounds to wash away distraction.</p>
+                </div>
+               <div class="play">
+                    <div class="box">
+                        <div class="play__content--img">
+                            <a href="#"><img src="./img/play_img/1.svg" alt=""></a>
+                            <audio class="sound" src="./audio/1.mp3"></audio>
+                        </div>
+                        <div class="play__content--vol">
+                            <input type="range" min="0" value="0" max="100">
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="play__content--img">
+                            <a href="#"><img src="./img/play_img/1.svg" alt=""></a>
+                            <audio class="sound" src="https://ambicular.com/sounds/rain/rainbest160.mp3"></audio>
+                        </div>
+                        <div class="play__content--vol">
+                            <input type="range" min="0" value="0" max="100">
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="play__content--img">
+                            <a href="#"><img src="./img/play_img/1.svg" alt=""></a>
+                            <audio class="sound" src="./audio/1.mp3"></audio>
+                        </div>
+                        <div class="play__content--vol">
+                            <input type="range" min="0" value="0" max="100">
+                        </div>
+                    </div>
+               </div>
+            </div>
         </section>
 
-        <!-- =============================== -->
+        <!-- ===============team================ -->
 
         <section id="team">
-           <div class="container">
+           <div class="team__container">
             <h2>Meet Our Team</h2>
             <div class="team">
                 <div class="team__member">
                     <div class="team__member--img">
-                        <img src="./img/1.jpg" alt="">
+                        <img src="./img/team_img/team_1.jpg" alt="">
                     </div>
                     <div class="team__member--info">
                         <h4>name</h4>
@@ -80,7 +122,7 @@
                 </div>
                 <div class="team__member">
                     <div class="team__member--img">
-                        <img src="./img/1.jpg" alt="">
+                        <img src="./img/team_img/team_1.jpg" alt="">
                     </div>
                     <div class="team__member--info">
                         <h4>name</h4>
@@ -96,12 +138,12 @@
            </div>
         </section>
     </main>
-    <!--==================================================  -->
+    <!--==========================contact========================  -->
     <section id="contact">
         <div class="contact__container">
             <aside class="contact__aside">
                 <div class="aside__img">
-                    <img src="./img/contact.svg" alt="">
+                    <img src="./img/contact_img/contact.svg" alt="">
                 </div>
                 <h2>Contact Us</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum fugiat cumque velit nobis error ipsa.</p>
@@ -142,7 +184,7 @@
 
                 <div class="message">
                     <label for="message">Message</label>
-                    <textarea name="Message" rows="5" placeholder="Message" required ></textarea>
+                    <textarea name="Message" rows="5" placeholder="" required ></textarea>
                 </div>
                 <button type="submit" class="submit__btn">Send Message</button>
             </form>
@@ -154,7 +196,7 @@
 
 
 
-    <!--==================================================  -->
+    <!--======================footer============================  -->
     <footer>
         <section id="footer">
             <div class="footer__container">
@@ -163,11 +205,11 @@
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum fugiat cumque velit nobis error ipsa.</p>
                 </div>
                 <div class="footer__2">
-                    <h4>Links</h4>
                     <ul class="links">
                         <li><a href="#banner">Home</a></li>
-                        <li><a href="#banner">Play</a></li>
-                        <li><a href="#banner">Our Team</a></li>
+                        <li><a href="#play">Play</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer__3">
@@ -185,10 +227,7 @@
             </div>
         </section>
     </footer>
-    <script
-    src="https://kit.fontawesome.com/28c0af3030.js"
-    crossorigin="anonymous"
-    ></script>
+    
     <script src="./js/main.js"></script>
 </body>
 </html>
