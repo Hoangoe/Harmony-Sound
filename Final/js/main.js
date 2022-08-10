@@ -10,6 +10,7 @@ window.addEventListener("load", ()=>{
     const play = document.querySelectorAll(".play div");
     const sounds = document.querySelectorAll(".sound"); 
     const item__up = document.querySelectorAll(".item__up"); 
+    
 
     play.forEach((play__item, index) => {
         play__item.addEventListener("click", () => {
