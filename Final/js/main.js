@@ -7,24 +7,21 @@ window.addEventListener("load", ()=>{
 
     // audio
     const vol__bar = document.querySelectorAll(".vol__bar"); 
-    const play = document.querySelectorAll(".play div");
     const sounds = document.querySelectorAll(".sound"); 
-    const item__up = document.querySelectorAll(".item__up"); 
     
-
-    play.forEach((play__item, index) => {
-        play__item.addEventListener("click", () => {
+    Array.from(document.getElementsByClassName("play__img")).forEach((element , index)=>{
+        element.addEventListener('click', (e)=>{
             vol__bar[index].classList.toggle("vol__open");
-            if(play__item.dataset.playing==="false"){
-                play__item.dataset.playing="true";
+            if(element.dataset.playing==="false"){
+                element.dataset.playing="true";
                 sounds[index].play();
             }
             else{
-                play__item.dataset.playing="false";
+                element.dataset.playing="false";
                 sounds[index].pause();
             }
-        });
-     });
+        })
+    })
 });
 
 
